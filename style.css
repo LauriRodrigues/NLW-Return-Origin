@@ -6,6 +6,7 @@
   --paragraph: hsl(210, 9%, 31%);
   --brand-beige: hsl(39, 100%, 97%);
   --brand-light: hsl(148, 23%, 89%);
+  --bg-light: hsl(180, 14%, 97%);
 
   font-size: 62.5%; /* 1rem = 10px */
 
@@ -24,7 +25,12 @@ body {
   height: 100%;
 }
 
+html {
+  scroll-behavior: smooth; /* chrome://flags/#smooth-scrolling para caso não funcione */
+}
+
 body {
+  background-color: var(--bg-light);
   font-family: 'DM Sans';
   font-size: 1.6rem;
   text-align: center;
@@ -41,103 +47,42 @@ ul {
   list-style: none;
 }
 
-/* =====HEADER====================================== */
-
-header {
-  margin-top: calc(4.1rem + var(--nav-height));
+section {
+  padding-block: 10rem;
 }
 
-header::before {
-  /* cria um elemento antes do header direto pelo css */
-  content: '';
-  width: 100%;
-  height: calc(108rem + var(--nav-height));
-  background-color: var(--brand-light);
-  display: block;
-
-  position: absolute; /* faz a separação de folhas */
-  top: 0;
-  left: 0;
-  z-index: -1; /* -1 indica que está uma folha abaixo */
-}
-
-header h4 {
-  margin-bottom: 1.6rem;
+section header h4 {
   font-size: 1.4rem;
+  font-weight: 700;
+  line-height: 150%;
+  letter-spacing: 0.08rem;
+  text-transform: uppercase;
   color: var(--primary-color);
+  margin-bottom: 1.6rem;
 }
 
-header h1 {
+section header h2 {
+  font-size: 3rem;
+  line-height: 3.9rem;
+  color: var(--headline);
+}
+
+section header h1 {
   font-size: 3.4rem;
   color: var(--headline);
   line-height: 130%;
   margin-bottom: 2.4rem;
 }
 
-header p {
-  font-size: 1.8rem;
+section .content p {
+  color: var(--paragraph);
+  font-size: 1.6rem;
   line-height: 150%;
   font-weight: 400;
-  color: var(--paragraph);
-  margin-bottom: 3.2rem;
 }
 
-header button {
-  height: 6.2rem;
-  width: 26.3rem;
-  border-radius: 4rem;
-  margin-bottom: 6rem;
-  margin-right: auto;
-  margin-left: auto;
-
-  background-color: var(--primary-color);
-  border: none;
-
-  font-size: 1.4rem;
-  text-transform: uppercase;
-  color: white;
-  font-weight: 700;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.6rem;
-}
-
-header img {
-  width: 26.4rem;
-  display: block;
-  margin-inline: auto;
-  object-position: 0 2rem;
-}
-
-.stats {
-  width: 32.7rem;
-  height: 47rem;
-  margin-inline: auto;
-  gap: 6rem;
-  padding-block: 4rem;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-
-  background-color: var(--brand-beige);
-  border: 1px solid var(--brand-light);
-  border-radius: 0.6rem;
-}
-
-.stat p {
-  margin: 0;
-  color: var(--primary-color);
-  line-height: 150%;
-}
-
-.stat h3 {
-  font-size: 4.8rem;
-  color: var(--headline);
-  line-height: 130%;
-  margin-bottom: 0.4rem;
+img {
+  max-width: 100%;
 }
 
 /* =====NAVIGATION====================================== */
@@ -147,10 +92,8 @@ nav {
   height: var(--nav-height);
   position: fixed;
   top: 0;
-  left: 50%;
-  transform: translateX(
-    -50%
-  ); /* faz com que ande 50% para a esquerda a partir da posição determinada no left */
+  width: 100vw;
+  z-index:100;
 }
 
 nav .wrapper {
@@ -161,16 +104,14 @@ nav .wrapper {
 
 nav.scroll {
   background: var(--primary-color);
-  width: 100vw;
+  
 }
 
-nav.scroll svg:nth-child(1) path {
-  /* aplica ao primeiro filho svg */
+nav.scroll .logo path { /* aplica ao primeiro filho svg */
   fill: white;
 }
 
-nav.scroll button path {
-  /* aplica ao segundo filho svg */
+nav.scroll button path { /* aplica ao segundo filho svg */
   stroke: white;
 }
 
@@ -186,9 +127,8 @@ body.menu-expanded {
   overflow: hidden; /* para sumir a barra de scroll */
 }
 
-body.menu-expanded > :not(nav) {
-  /* selecionando todas as folhas abaixo do menu-expanded exceto o nav*/
-  display: none;
+body.menu-expanded > :not(nav) { /* selecionando todas as folhas abaixo do menu-expanded exceto o nav*/
+  visibility: hidden;
 }
 
 .menu,
@@ -204,6 +144,10 @@ body.menu-expanded .close-menu {
   visibility: visible;
 }
 
+.menu {
+  transform: translateY(100%); /* para ficar 100% abaixo da vh */
+}
+
 body.menu-expanded .menu {
   position: fixed;
   top: 0;
@@ -214,10 +158,9 @@ body.menu-expanded .menu {
   padding-top: var(--nav-height);
 
   background: var(--primary-color);
-}
 
-body.menu-expanded nav {
-  position: relative;
+  transition: transform 300ms;
+  transform: translateY(0); /* esse transition e transform irá fazer com que o .menu volte à posição 0 do eixo Y quando o menu for aberto*/
 }
 
 .social-links {
@@ -265,12 +208,135 @@ body.menu-expanded nav button {
   z-index: 100;
 }
 
-body.menu-expanded .logo path {
-  /* aplica ao primeiro filho svg */
+body.menu-expanded .logo path { /* aplica ao primeiro filho svg */
   fill: white;
 }
 
-body.menu-expanded button path {
-  /* aplica ao segundo filho svg */
+body.menu-expanded button path { /* aplica ao segundo filho svg */
   stroke: white;
+}
+
+/* =====HOME====================================== */
+
+#home {
+  padding-top: calc(4.1rem + var(--nav-height));
+}
+
+#home::before { /* cria um elemento antes do header direto pelo css */
+  content: '';
+  width: 100%;
+  height: calc(108rem + var(--nav-height));
+  background-color: var(--brand-light);
+  display: block;
+
+  position: absolute; /* faz a separação de folhas */
+  top: 0;
+  left: 0;
+  z-index: -1; /* -1 indica que está uma folha abaixo */
+}
+
+#home p {
+  font-size: 1.8rem;
+  line-height: 150%;
+  font-weight: 400;
+  color: var(--paragraph);
+  margin-bottom: 3.2rem;
+}
+
+#home button {
+  height: 6.2rem;
+  width: 26.3rem;
+  border-radius: 4rem;
+  margin-bottom: 6rem;
+  margin-right: auto;
+  margin-left: auto;
+
+  background-color: var(--primary-color);
+  border: none;
+
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 700;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+}
+
+#home img {
+  width: 26.4rem;
+  display: block;
+  margin-inline: auto;
+  object-position: 0 2rem;
+}
+
+#home .stats {
+  width: 32.7rem;
+  height: 47rem;
+  margin-inline: auto;
+  gap: 6rem;
+  padding-block: 4rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  background-color: var(--brand-beige);
+  border: 1px solid var(--brand-light);
+  border-radius: 0.6rem;
+}
+
+#home .stat p {
+  margin: 0;
+  color: var(--primary-color);
+  line-height: 150%;
+}
+
+#home .stat h3 {
+  font-size: 4.8rem;
+  color: var(--headline);
+  line-height: 130%;
+  margin-bottom: 0.4rem;
+}
+
+/* =====SERVICES====================================== */
+
+#services h2 {
+  margin-bottom: 6rem;
+}
+
+#services .cards {
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem
+}
+
+#services .card {
+  padding: 2.4rem;
+  text-align: left;
+  background: white;
+  border: 1px solid var(--brand-light);
+  border-radius: .6rem;
+}
+
+#services .card h3 {
+  margin-block: 1.6rem;
+}
+
+/* =====ABOUT====================================== */
+
+#about {
+  text-align: left;
+  background: var(--brand-beige);
+}
+
+#about h2 {
+  margin-bottom: 2.4rem;
+}
+
+#about p {
+  margin-top: 2.4rem;
+  margin-bottom: 6rem;
 }
