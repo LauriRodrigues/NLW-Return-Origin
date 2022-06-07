@@ -3,7 +3,7 @@ window.addEventListener('scroll', onScroll)
 onScroll()
 
 function onScroll() {
-  showNavOnScroll ()
+  showNavOnScroll()
   showBackToTopButtonOnScroll()
   activateMenuAtCurrentSection(home)
   activateMenuAtCurrentSection(services)
