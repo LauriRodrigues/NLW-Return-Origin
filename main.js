@@ -3,7 +3,7 @@ window.addEventListener('scroll', onScroll)
 onScroll()
 
 function onScroll() {
-  showNavOnScroll ()
+  showNavOnScroll()
   showBackToTopButtonOnScroll()
   activateMenuAtCurrentSection(home)
   activateMenuAtCurrentSection(services)
@@ -13,9 +13,9 @@ function onScroll() {
 
 function showNavOnScroll () {
   if (scrollY>0) {
-    navigation.classList.add('scroll') // para add a class scroll na tag nav
+    document.querySelector('#navigation').classList.add('scroll') // para add a class scroll na tag nav
   } else 
-      navigation.classList.remove('scroll') // para remover a class scroll na tag nav
+    document.querySelector('#navigation').classList.remove('scroll') // para remover a class scroll na tag nav
 }
 
 function showBackToTopButtonOnScroll() {

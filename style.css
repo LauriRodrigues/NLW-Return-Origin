@@ -133,7 +133,6 @@ nav .wrapper {
 
 nav.scroll {
   background: var(--primary-color);
-  
 }
 
 nav.scroll .logo path { /* aplica ao primeiro filho svg */
