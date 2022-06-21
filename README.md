@@ -1,7 +1,10 @@
-
-<h1 align="center"> 
+<div align="center">
+  <img alt="Logo NLW Return" title="NLW Return" src="./assets/readme/LogoNLW.png">
+</div>
+	
+<h4 align="center"> 
 	🚀 NextLevelWeek Return
-</h1>
+</h4>
 
 <div align="center">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/LauriRodrigues/NLW-Return-Origin?color=hsl%28170%2C%20100%25%2C%2026%25%29">
