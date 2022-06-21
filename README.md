@@ -1,6 +1,3 @@
-<h1 align=center>
-  <img alt="Logo DoctorCare" title="DoctorCare" src=".assets/doutor-feliz-segurando-prancheta-com-pacientes.png"/> 
-</h1>
 
 <h4 align="center"> 
 	🚀 NextLevelWeek Return
