@@ -38,3 +38,7 @@
 
 <img alt="Versão Mobile" title="Mobile" src="./assets/readme/Mobile.png">
 
+<br> <br>
+
+
+<a href="https://www.linkedin.com/feed/update/urn:li:activity:6927008934088056833/"> <img alt="Logo Linkedin" title="Post Linkedin" src="./assets/readme/linkedin.png" width="1.8%">  Post Linkedin </a>
