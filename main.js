@@ -15,7 +15,11 @@ function showNavOnScroll () {
   if (scrollY>0) {
     document.querySelector('#navigation').classList.add('scroll') // para add a class scroll na tag nav
   } else 
+<<<<<<< HEAD
     document.querySelector('#navigation').classList.remove('scroll') // para remover a class scroll na tag nav
+=======
+      document.querySelector('#navigation').classList.remove('scroll') // para remover a class scroll na tag nav
+>>>>>>> 9001767ea78881b4458d6e7025da02cc256a8457
 }
 
 function showBackToTopButtonOnScroll() {
