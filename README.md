@@ -27,11 +27,11 @@
 <h2 align=left> 🎨 Layout </h2>
 <a href="https://www.figma.com/community/file/1102912263666619803/DoctorCare"> Visualizar no Figma </a>
 
-<h4> Web </h4>
+<h4>💻 Desktop </h4>
 
 <img alt="Versão Desktop" title="Desktop" src="./assets/readme/Desktop.png">
 
-<h4> Mobile </h4>
+<h4>📱 Mobile </h4>
 
 <img alt="Versão Mobile" title="Mobile" src="./assets/readme/Mobile.png">
 
