@@ -13,7 +13,7 @@
   
   <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/LauriRodrigues/NLW-Return-Origin?color=hsl%28170%2C%20100%25%2C%2026%25%29">
   
-  <a href="https://laurirodrigues.github.io/NLW-Return-Origin/"> Visualizar Deploy </a>
+  <a href="https://laurirodrigues.github.io/NLW-Return-Origin/"> ▶️ Visualizar Deploy </a>
 </div>
 
 <h2 align=left> 💻 Sobre o projeto </h3>
