@@ -1,7 +1,7 @@
 
-<h4 align="center"> 
+<h1 align="center"> 
 	🚀 NextLevelWeek Return
-</h4>
+</h1>
 
 <div align="center">
   <img alt="GitHub language count" src="https://img.shields.io/github/languages/count/LauriRodrigues/NLW-Return-Origin?color=hsl%28170%2C%20100%25%2C%2026%25%29">
